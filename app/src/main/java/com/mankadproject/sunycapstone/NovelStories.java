@@ -25,7 +25,7 @@ public class NovelStories extends AppCompatActivity implements View.OnClickListe
 
     Toolbar toolbar;
 
-    private static String URL = "http://192.168.1.87:5000/novel";
+    private static String URL = "http://localhost:5000/novel";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
