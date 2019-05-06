@@ -25,7 +25,7 @@ public class Poetry extends AppCompatActivity implements View.OnClickListener {
 
     Toolbar toolbar;
 
-    private static String URL = "http://localhost:/";
+    private static String URL = "http://localhost:5000/?data=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +67,7 @@ public class Poetry extends AppCompatActivity implements View.OnClickListener {
                 if (text.isEmpty()) {
                     return null;
                 }
-                URL += URLEncoder.encode("?text="+text, "UTF-8");
+                URL += URLEncoder.encode(text, "UTF-8");
                 JsonParser parser = new JsonParser();
                 JSONObject jsonObject = parser.getJSONFromUrl(URL);
 

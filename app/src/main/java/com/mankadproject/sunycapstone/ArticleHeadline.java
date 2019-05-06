@@ -26,7 +26,7 @@ public class ArticleHeadline extends AppCompatActivity implements View.OnClickLi
 
     ProgressBar progressBar;
 
-    private static String URL = "http://192.168.1.87:5000/article";
+    private static String URL = "http://192.168.1.87:5000/article?data=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class ArticleHeadline extends AppCompatActivity implements View.OnClickLi
                 if (text.isEmpty()) {
                     return null;
                 }
-                URL += URLEncoder.encode("?text="+text, "UTF-8");
+                URL += URLEncoder.encode(text, "UTF-8");
                 JsonParser parser = new JsonParser();
                 JSONObject jsonObject = parser.getJSONFromUrl(URL);
 

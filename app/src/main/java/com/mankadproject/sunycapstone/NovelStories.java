@@ -25,7 +25,7 @@ public class NovelStories extends AppCompatActivity implements View.OnClickListe
 
     Toolbar toolbar;
 
-    private static String URL = "http://localhost:5000/novel";
+    private static String URL = "http://192.168.1.90:5000/novel?data=";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +67,8 @@ public class NovelStories extends AppCompatActivity implements View.OnClickListe
                 if (text.isEmpty()) {
                     return null;
                 }
-                URL += URLEncoder.encode("?text="+text, "UTF-8");
                 JsonParser parser = new JsonParser();
-                JSONObject jsonObject = parser.getJSONFromUrl(URL);
+                JSONObject jsonObject = parser.getJSONFromUrl(URL + URLEncoder.encode(text, "UTF-8"));
 
                 if (jsonObject != null) {
                     return jsonObject.getString("data");
